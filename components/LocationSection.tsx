@@ -38,11 +38,20 @@ export default function LocationSection() {
               <div className="text-sm font-semibold text-ink-faint uppercase tracking-wide mb-2">
                 Hours
               </div>
-              <ul className="text-ink-soft">
+              <ul className="text-ink-soft max-w-sm">
                 {business.hours.map((h) => (
-                  <li key={h.day} className="flex justify-between gap-6 py-1.5 border-b border-surface-line/60 max-w-xs tabular-nums">
-                    <span>{h.day}</span>
-                    <span>{h.time}</span>
+                  <li
+                    key={h.day}
+                    className="flex items-baseline justify-between gap-6 py-2.5 border-b border-surface-line/60"
+                  >
+                    <span className="text-ink font-medium shrink-0">{h.day}</span>
+                    <span className="text-right tabular-nums">
+                      {h.time.split(", ").map((part) => (
+                        <span key={part} className="block whitespace-nowrap">
+                          {part}
+                        </span>
+                      ))}
+                    </span>
                   </li>
                 ))}
               </ul>

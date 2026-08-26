@@ -32,8 +32,8 @@ export default function Story() {
         </div>
         <div className="relative aspect-[4/5] overflow-hidden">
           <Image
-            src="/images/chef-cutting-tuna.jpg"
-            alt="Chef Mason hand-cutting tuna at the sushi counter"
+            src="/images/chef-story-stock.jpg"
+            alt="Sushi chef plating at the counter"
             fill
             sizes="(min-width: 768px) 50vw, 100vw"
             className="object-cover"

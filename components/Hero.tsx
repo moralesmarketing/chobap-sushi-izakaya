@@ -6,14 +6,14 @@ export default function Hero() {
     <section className="relative overflow-hidden">
       <div className="absolute inset-0">
         <Image
-          src="/images/interior-dining-room.jpg"
-          alt="Chobap Sushi & Izakaya dining room and sushi bar"
+          src="/images/hero-sushi-plate.avif"
+          alt="Signature roll plated at Chobap Sushi & Izakaya"
           fill
           priority
           sizes="100vw"
           className="object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/25 to-black/45" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/45 to-black/60" />
       </div>
 
       <div className="section relative py-40 md:py-56 flex flex-col items-center text-center">
