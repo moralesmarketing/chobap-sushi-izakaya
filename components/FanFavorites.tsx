@@ -8,8 +8,8 @@ export default function FanFavorites() {
         <div className="grid md:grid-cols-[1fr_1.4fr] gap-10 md:gap-16 items-start">
           <div className="relative aspect-[4/5] overflow-hidden hidden md:block">
             <Image
-              src="/images/table-spread.jpg"
-              alt="Table spread of rolls, salad, and skewers at Chobap"
+              src="/images/table-spread-stock.jpg"
+              alt="Shared table spread of Japanese small plates"
               fill
               sizes="33vw"
               className="object-cover"
