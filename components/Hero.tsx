@@ -6,49 +6,46 @@ export default function Hero() {
     <section className="relative overflow-hidden">
       <div className="absolute inset-0">
         <Image
-          src="/images/hero-izakaya.jpg"
-          alt="Warm, lantern-lit izakaya counter"
+          src="/images/interior-dining-room.jpg"
+          alt="Chobap Sushi & Izakaya dining room and sushi bar"
           fill
           priority
           sizes="100vw"
-          className="object-cover object-[50%_35%]"
+          className="object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-surface from-5% via-surface/70 via-40% to-transparent to-85%" />
-        <div className="absolute inset-x-0 bottom-0 h-2/5 bg-gradient-to-t from-surface to-transparent" />
-        <div className="absolute inset-0 bg-surface/55 md:hidden" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/25 to-black/45" />
       </div>
 
-      <div className="section relative py-28 md:py-40">
-        <div className="max-w-xl [text-shadow:0_2px_18px_rgba(0,0,0,0.6)] md:[text-shadow:none]">
-          <div className="eyebrow mb-4">Chino Hills, CA</div>
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-ink leading-[1.05] mb-6">
-            Sushi &amp; Izakaya,{" "}
-            <span className="text-red">Cut Fresh Daily.</span>
-          </h1>
-          <p className="text-ink-soft text-lg mb-8 max-w-[42ch]">
-            Hand-cut nigiri and sashimi, signature rolls, and an izakaya small-plates
-            menu from Chef Mason — right on Chino Hills Pkwy.
-          </p>
+      <div className="section relative py-40 md:py-56 flex flex-col items-center text-center">
+        <div className="uppercase tracking-[0.25em] text-[11px] text-gold-bright font-semibold mb-6">
+          Chino Hills, California
+        </div>
+        <span className="font-script text-6xl md:text-8xl text-white leading-none mb-6 [text-shadow:0_2px_24px_rgba(0,0,0,0.5)]">
+          Cho Bap
+        </span>
+        <p className="text-white/90 text-base md:text-lg mb-10 max-w-[46ch] [text-shadow:0_1px_10px_rgba(0,0,0,0.5)]">
+          Sushi &amp; Izakaya — hand-cut nigiri, sashimi, and signature rolls from
+          Chef Mason.
+        </p>
 
-          <div className="flex flex-wrap items-center gap-4 mb-8">
-            <a href={business.orderUrl} target="_blank" rel="noopener noreferrer" className="btn btn-primary text-base">
-              Order Online
-            </a>
-            <a href="/menu" className="btn btn-ghost text-base">
-              View Menu
-            </a>
-          </div>
-
-          <a
-            href={business.yelpUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-sm text-ink-soft hover:text-ink"
-          >
-            <span className="text-gold font-bold">★ {business.rating.yelp.score}</span>
-            <span>{business.rating.yelp.count.toLocaleString()} reviews on Yelp</span>
+        <div className="flex flex-wrap items-center justify-center gap-4 mb-10">
+          <a href={business.orderUrl} target="_blank" rel="noopener noreferrer" className="btn bg-white text-ink hover:bg-white/90">
+            Order Online
+          </a>
+          <a href="/menu" className="btn border border-white/70 text-white hover:bg-white hover:text-ink">
+            View Menu
           </a>
         </div>
+
+        <a
+          href={business.yelpUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 text-sm text-white/80 hover:text-white"
+        >
+          <span className="text-gold-bright font-semibold">★ {business.rating.yelp.score}</span>
+          <span>{business.rating.yelp.count.toLocaleString()} reviews on Yelp</span>
+        </a>
       </div>
     </section>
   );

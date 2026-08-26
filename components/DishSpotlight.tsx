@@ -26,7 +26,7 @@ export default function DishSpotlight({
           reverse ? "md:[&>*:first-child]:order-2" : ""
         }`}
       >
-        <div className="relative aspect-[4/3] rounded-2xl overflow-hidden">
+        <div className="relative aspect-[4/3] overflow-hidden">
           <Image
             src={image}
             alt={imageAlt}
@@ -37,10 +37,10 @@ export default function DishSpotlight({
         </div>
         <div>
           <div className="eyebrow mb-3">{eyebrow}</div>
-          <h2 className="text-3xl md:text-4xl font-bold text-ink mb-4">{title}</h2>
+          <h2 className="text-3xl md:text-4xl italic font-medium text-ink mb-4">{title}</h2>
           <p className="text-ink-soft text-base md:text-lg leading-relaxed mb-5">{description}</p>
           {price && (
-            <div className="inline-flex items-center gap-2 text-gold font-display font-700 text-xl">
+            <div className="inline-flex items-center gap-2 text-gold font-display italic text-xl">
               {price}
             </div>
           )}

@@ -6,9 +6,7 @@ export default function Footer() {
     <footer className="border-t border-surface-line bg-surface-raised">
       <div className="section py-14 grid gap-10 md:grid-cols-3">
         <div>
-          <span className="flex h-11 w-11 items-center justify-center rounded-sm border border-gold text-gold font-display font-bold text-sm mb-4">
-            초밥
-          </span>
+          <span className="block font-script text-3xl leading-none text-ink mb-4">Cho Bap</span>
           <p className="text-sm text-ink-faint max-w-[28ch]">
             Fresh-cut sushi, sashimi, and izakaya small plates in Chino Hills.
           </p>
@@ -34,6 +32,11 @@ export default function Footer() {
         <div className="text-sm">
           <div className="eyebrow mb-3">Find Us</div>
           <ul className="flex flex-col gap-2">
+            <li>
+              <a href={business.instagramUrl} target="_blank" rel="noopener noreferrer" className="text-ink-soft hover:text-ink">
+                Instagram
+              </a>
+            </li>
             <li>
               <a href={business.yelpUrl} target="_blank" rel="noopener noreferrer" className="text-ink-soft hover:text-ink">
                 Yelp

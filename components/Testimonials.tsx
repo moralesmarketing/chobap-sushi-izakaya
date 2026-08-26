@@ -7,7 +7,7 @@ export default function Testimonials() {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10">
           <div>
             <div className="eyebrow mb-3">What Guests Are Saying</div>
-            <h2 className="text-3xl md:text-4xl font-bold text-ink">
+            <h2 className="text-3xl md:text-4xl italic font-medium text-ink">
               {business.rating.yelp.score}★ average, {business.rating.yelp.count.toLocaleString()} reviews
             </h2>
           </div>
@@ -25,7 +25,7 @@ export default function Testimonials() {
           {reviews.map((r) => (
             <figure
               key={r.name}
-              className="bg-surface border border-surface-line rounded-2xl p-6 flex flex-col gap-4"
+              className="bg-surface border border-surface-line p-6 flex flex-col gap-4"
             >
               <div className="text-gold text-lg leading-none" aria-hidden>
                 ★★★★★

@@ -7,7 +7,7 @@ export default function Story() {
       <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
         <div>
           <div className="eyebrow mb-3">Meet the Chef</div>
-          <h2 className="text-3xl md:text-4xl font-bold text-ink mb-5">
+          <h2 className="text-3xl md:text-4xl italic font-medium text-ink mb-5">
             Every piece, cut to order by Chef Mason.
           </h2>
           <p className="text-ink-soft text-base md:text-lg leading-relaxed mb-4">
@@ -30,10 +30,10 @@ export default function Story() {
             Visit Us on Chino Hills Pkwy
           </a>
         </div>
-        <div className="relative aspect-[4/5] rounded-2xl overflow-hidden">
+        <div className="relative aspect-[4/5] overflow-hidden">
           <Image
-            src="/images/chef-story.jpg"
-            alt="Chef plating sushi at the counter"
+            src="/images/chef-cutting-tuna.jpg"
+            alt="Chef Mason hand-cutting tuna at the sushi counter"
             fill
             sizes="(min-width: 768px) 50vw, 100vw"
             className="object-cover"

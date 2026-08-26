@@ -10,6 +10,7 @@ export const business = {
   phoneHref: "tel:+19093931073",
   email: null as string | null,
   orderUrl: "https://chobapsushiizakaya.menu11.com/chinohills/order",
+  instagramUrl: "https://www.instagram.com/masonsando/",
   yelpUrl: "https://www.yelp.com/biz/chobap-sushi-and-izakaya-chino-hills",
   mapsUrl:
     "https://www.google.com/maps/search/?api=1&query=Chobap+Sushi+%26+Izakaya+2593+Chino+Hills+Pkwy+Ste+E+Chino+Hills+CA+91709",
@@ -20,8 +21,8 @@ export const business = {
     { day: "Tuesday", time: "11:30 AM – 3:00 PM, 5:00 PM – 10:00 PM" },
     { day: "Wednesday", time: "11:30 AM – 3:00 PM, 5:00 PM – 10:00 PM" },
     { day: "Thursday", time: "11:30 AM – 3:00 PM, 5:00 PM – 10:00 PM" },
-    { day: "Friday", time: "11:30 AM – 10:00 PM" },
-    { day: "Saturday", time: "11:30 AM – 10:00 PM" },
+    { day: "Friday", time: "11:30 AM – 3:00 PM, 5:00 PM – 10:00 PM" },
+    { day: "Saturday", time: "11:30 AM – 3:00 PM, 5:00 PM – 10:00 PM" },
     { day: "Sunday", time: "12:00 PM – 9:00 PM" },
   ],
   rating: {

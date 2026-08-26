@@ -9,7 +9,7 @@ export default function FAQAccordion() {
   return (
     <section className="section py-16 md:py-20">
       <div className="eyebrow mb-3">FAQ</div>
-      <h2 className="text-3xl md:text-4xl font-bold text-ink mb-10">
+      <h2 className="text-3xl md:text-4xl italic font-medium text-ink mb-10">
         Frequently Asked Questions
       </h2>
 

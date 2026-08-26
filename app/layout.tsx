@@ -1,13 +1,20 @@
 import type { Metadata } from "next";
-import { Shippori_Mincho, Inter } from "next/font/google";
+import { Cormorant_Garamond, Yellowtail, Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
-const shippori = Shippori_Mincho({
+const cormorant = Cormorant_Garamond({
   variable: "--font-display",
   subsets: ["latin"],
-  weight: ["500", "600", "700", "800"],
+  weight: ["400", "500", "600", "700"],
+  style: ["normal", "italic"],
+});
+
+const yellowtail = Yellowtail({
+  variable: "--font-script",
+  subsets: ["latin"],
+  weight: ["400"],
 });
 
 const inter = Inter({
@@ -23,7 +30,10 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={`${shippori.variable} ${inter.variable} h-full`}>
+    <html
+      lang="en"
+      className={`${cormorant.variable} ${yellowtail.variable} ${inter.variable} h-full`}
+    >
       <body className="min-h-full flex flex-col bg-surface text-ink antialiased">
         <Header />
         <main className="flex-1">{children}</main>

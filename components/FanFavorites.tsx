@@ -6,10 +6,10 @@ export default function FanFavorites() {
     <section className="bg-surface-raised border-y border-surface-line">
       <div className="section py-16 md:py-20">
         <div className="grid md:grid-cols-[1fr_1.4fr] gap-10 md:gap-16 items-start">
-          <div className="relative aspect-[4/5] rounded-2xl overflow-hidden hidden md:block">
+          <div className="relative aspect-[4/5] overflow-hidden hidden md:block">
             <Image
-              src="/images/lantern-bar.jpg"
-              alt="Lantern-lit izakaya bar seating"
+              src="/images/table-spread.jpg"
+              alt="Table spread of rolls, salad, and skewers at Chobap"
               fill
               sizes="33vw"
               className="object-cover"
@@ -18,7 +18,7 @@ export default function FanFavorites() {
 
           <div>
             <div className="eyebrow mb-3">Most Ordered, Most Photographed</div>
-            <h2 className="text-3xl md:text-4xl font-bold text-ink mb-8">Fan Favorites</h2>
+            <h2 className="text-3xl md:text-4xl italic font-medium text-ink mb-8">Fan Favorites</h2>
 
             <ul className="flex flex-col">
               {fanFavorites.map((item) => (

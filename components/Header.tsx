@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { business } from "@/lib/site-data";
 
 const navLinks = [
@@ -14,19 +14,31 @@ const navLinks = [
 
 export default function Header() {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 64);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  const solid = scrolled || open;
 
   return (
-    <header className="sticky top-0 z-50 bg-surface/95 backdrop-blur border-b border-surface-line">
+    <header
+      className={`fixed top-0 inset-x-0 z-50 transition-colors duration-300 ${
+        solid ? "bg-surface/95 backdrop-blur border-b border-surface-line" : "bg-transparent"
+      }`}
+    >
       <div className="section flex h-20 items-center justify-between">
-        <Link href="/" className="flex items-center gap-3 shrink-0">
-          <span className="flex h-11 w-11 items-center justify-center rounded-sm border border-gold text-gold font-display font-bold text-sm">
-            초밥
-          </span>
-          <span className="leading-tight text-ink">
-            <span className="block text-[10px] tracking-[0.2em] uppercase text-ink-faint">
-              {business.tagline}
-            </span>
-            <span className="block text-lg font-bold font-display">Chobap</span>
+        <Link href="/" className="flex items-center gap-2 shrink-0">
+          <span
+            className={`font-script text-3xl leading-none transition-colors ${
+              solid ? "text-ink" : "text-white [text-shadow:0_1px_10px_rgba(0,0,0,0.5)]"
+            }`}
+          >
+            Cho Bap
           </span>
         </Link>
 
@@ -35,15 +47,24 @@ export default function Header() {
             <Link
               key={l.href}
               href={l.href}
-              className="text-sm font-medium text-ink-soft hover:text-ink transition-colors"
+              className={`text-xs font-medium uppercase tracking-[0.14em] transition-colors ${
+                solid
+                  ? "text-ink-soft hover:text-ink"
+                  : "text-white/90 hover:text-white [text-shadow:0_1px_8px_rgba(0,0,0,0.4)]"
+              }`}
             >
               {l.label}
             </Link>
           ))}
         </nav>
 
-        <div className="hidden lg:flex items-center gap-3">
-          <a href={business.phoneHref} className="text-sm font-semibold text-ink-soft hover:text-ink">
+        <div className="hidden lg:flex items-center gap-4">
+          <a
+            href={business.phoneHref}
+            className={`text-xs font-medium tracking-wide transition-colors ${
+              solid ? "text-ink-soft hover:text-ink" : "text-white/90 hover:text-white"
+            }`}
+          >
             {business.phone}
           </a>
           <a href={business.orderUrl} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
@@ -56,14 +77,16 @@ export default function Header() {
           aria-label="Toggle menu"
           aria-expanded={open}
           onClick={() => setOpen((v) => !v)}
-          className="lg:hidden flex flex-col justify-center gap-1.5 h-11 w-11 items-center rounded-full border border-surface-line"
+          className={`lg:hidden flex flex-col justify-center gap-1.5 h-11 w-11 items-center rounded-full border transition-colors ${
+            solid ? "border-surface-line" : "border-white/40"
+          }`}
         >
           <span
-            className={`block h-0.5 w-5 bg-ink transition-transform ${open ? "translate-y-[7px] rotate-45" : ""}`}
+            className={`block h-0.5 w-5 transition-transform ${solid ? "bg-ink" : "bg-white"} ${open ? "translate-y-[7px] rotate-45" : ""}`}
           />
-          <span className={`block h-0.5 w-5 bg-ink transition-opacity ${open ? "opacity-0" : ""}`} />
+          <span className={`block h-0.5 w-5 transition-opacity ${solid ? "bg-ink" : "bg-white"} ${open ? "opacity-0" : ""}`} />
           <span
-            className={`block h-0.5 w-5 bg-ink transition-transform ${open ? "-translate-y-[7px] -rotate-45" : ""}`}
+            className={`block h-0.5 w-5 transition-transform ${solid ? "bg-ink" : "bg-white"} ${open ? "-translate-y-[7px] -rotate-45" : ""}`}
           />
         </button>
       </div>
@@ -76,7 +99,7 @@ export default function Header() {
                 key={l.href}
                 href={l.href}
                 onClick={() => setOpen(false)}
-                className="py-3 text-base font-medium text-ink-soft hover:text-ink border-b border-surface-line last:border-none"
+                className="py-3 text-sm font-medium uppercase tracking-[0.14em] text-ink-soft hover:text-ink border-b border-surface-line last:border-none"
               >
                 {l.label}
               </Link>

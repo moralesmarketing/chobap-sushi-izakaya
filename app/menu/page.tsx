@@ -11,27 +11,29 @@ export const metadata: Metadata = {
 export default function MenuPage() {
   return (
     <>
-      <section className="relative overflow-hidden border-b border-surface-line">
+      <section className="relative overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/images/menu-banner.jpg"
+            src="/images/roll-chopsticks.jpg"
             alt=""
             fill
             sizes="100vw"
-            className="object-cover opacity-30"
+            className="object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-surface via-surface/85 to-surface/60" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/35 to-black/50" />
         </div>
-        <div className="section relative py-20 md:py-28">
-          <div className="eyebrow mb-3">Full Menu</div>
-          <h1 className="text-4xl md:text-5xl font-extrabold text-ink mb-4">
-            Sushi, Sashimi &amp; Izakaya Plates
+        <div className="section relative py-36 md:py-48 text-center flex flex-col items-center">
+          <div className="uppercase tracking-[0.25em] text-[11px] text-gold-bright font-semibold mb-4">
+            Full Menu
+          </div>
+          <h1 className="font-script text-5xl md:text-7xl text-white mb-5 [text-shadow:0_2px_20px_rgba(0,0,0,0.5)]">
+            Sushi, Sashimi &amp; Izakaya
           </h1>
-          <p className="text-ink-soft text-lg max-w-[52ch] mb-8">
+          <p className="text-white/90 text-lg max-w-[52ch] mb-8 [text-shadow:0_1px_8px_rgba(0,0,0,0.5)]">
             Order pickup online with the full menu below, or call ahead at{" "}
             {business.phone}.
           </p>
-          <a href={business.orderUrl} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
+          <a href={business.orderUrl} target="_blank" rel="noopener noreferrer" className="btn bg-white text-ink hover:bg-white/90">
             Order Online
           </a>
         </div>
@@ -41,7 +43,7 @@ export default function MenuPage() {
         <div className="flex flex-col gap-14">
           {menu.map((category) => (
             <div key={category.id} id={category.id}>
-              <h2 className="text-2xl md:text-3xl font-bold text-ink mb-1">{category.title}</h2>
+              <h2 className="text-2xl md:text-3xl italic font-medium text-ink mb-1">{category.title}</h2>
               {category.note && (
                 <p className="text-sm text-ink-faint mb-5 max-w-[60ch]">{category.note}</p>
               )}
@@ -57,7 +59,7 @@ export default function MenuPage() {
                         <span className="block text-sm text-ink-faint mt-0.5">{item.description}</span>
                       )}
                     </span>
-                    <span className="text-gold font-display font-700 tabular-nums shrink-0">
+                    <span className="text-gold font-display italic tabular-nums shrink-0">
                       {item.price}
                     </span>
                   </li>

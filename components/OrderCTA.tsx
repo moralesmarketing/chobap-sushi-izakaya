@@ -13,7 +13,7 @@ export default function OrderCTA() {
         <div className="grid md:grid-cols-[1.1fr_1fr] gap-12 items-center">
           <div>
             <div className="eyebrow mb-3">Order Ahead</div>
-            <h2 className="text-3xl md:text-4xl font-bold text-ink mb-4">
+            <h2 className="text-3xl md:text-4xl italic font-medium text-ink mb-4">
               Skip the wait. Order pickup online.
             </h2>
             <p className="text-ink-soft text-lg mb-8 max-w-[48ch]">
@@ -27,7 +27,7 @@ export default function OrderCTA() {
 
           <ul className="flex flex-col gap-5">
             {reasons.map((r) => (
-              <li key={r.label} className="flex gap-4 items-start bg-surface rounded-xl border border-surface-line p-5">
+              <li key={r.label} className="flex gap-4 items-start bg-surface border border-surface-line p-5">
                 <span className="mt-0.5 shrink-0 h-7 w-7 rounded-full bg-gold-soft text-gold flex items-center justify-center font-bold text-sm">
                   ✓
                 </span>
