@@ -1,20 +1,10 @@
-import Image from "next/image";
 import { business } from "@/lib/site-data";
+import HeroSlideshow from "@/components/HeroSlideshow";
 
 export default function Hero() {
   return (
     <section className="relative overflow-hidden">
-      <div className="absolute inset-0">
-        <Image
-          src="/images/hero-sushi-plate.avif"
-          alt="Signature roll plated at Chobap Sushi & Izakaya"
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/45 to-black/60" />
-      </div>
+      <HeroSlideshow />
 
       <div className="section relative py-40 md:py-56 flex flex-col items-center text-center">
         <div className="uppercase tracking-[0.25em] text-[11px] text-gold-bright font-semibold mb-6">
@@ -29,10 +19,10 @@ export default function Hero() {
         </p>
 
         <div className="flex flex-wrap items-center justify-center gap-4 mb-10">
-          <a href={business.orderUrl} target="_blank" rel="noopener noreferrer" className="btn bg-white text-ink hover:bg-white/90">
+          <a href={business.orderUrl} target="_blank" rel="noopener noreferrer" className="btn bg-white text-ink hover:bg-white/90 transition-colors duration-300">
             Order Online
           </a>
-          <a href="/menu" className="btn border border-white/70 text-white hover:bg-white hover:text-ink">
+          <a href="/menu" className="btn border border-white/70 text-white hover:bg-white hover:text-ink transition-colors duration-300">
             View Menu
           </a>
         </div>
@@ -41,7 +31,7 @@ export default function Hero() {
           href={business.yelpUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 text-sm text-white/80 hover:text-white"
+          className="inline-flex items-center gap-2 text-sm text-white/80 hover:text-white transition-colors duration-300"
         >
           <span className="text-gold-bright font-semibold">★ {business.rating.yelp.score}</span>
           <span>{business.rating.yelp.count.toLocaleString()} reviews on Yelp</span>

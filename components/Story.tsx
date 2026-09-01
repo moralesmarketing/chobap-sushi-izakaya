@@ -1,11 +1,12 @@
 import Image from "next/image";
 import { business } from "@/lib/site-data";
+import Reveal from "@/components/Reveal";
 
 export default function Story() {
   return (
     <section id="story" className="section py-16 md:py-24">
       <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
-        <div>
+        <Reveal>
           <div className="eyebrow mb-3">Meet the Chef</div>
           <h2 className="text-3xl md:text-4xl italic font-medium text-ink mb-5">
             Every piece, cut to order by Chef Mason.
@@ -25,20 +26,20 @@ export default function Story() {
             href={business.mapsUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn btn-ghost"
+            className="btn btn-ghost transition-colors duration-300"
           >
             Visit Us on Chino Hills Pkwy
           </a>
-        </div>
-        <div className="relative aspect-[4/5] overflow-hidden">
+        </Reveal>
+        <Reveal delayMs={150} className="relative aspect-[4/5] overflow-hidden group">
           <Image
             src="/images/chef-story-stock.jpg"
             alt="Sushi chef plating at the counter"
             fill
             sizes="(min-width: 768px) 50vw, 100vw"
-            className="object-cover"
+            className="object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-105"
           />
-        </div>
+        </Reveal>
       </div>
     </section>
   );

@@ -1,14 +1,17 @@
 import { business } from "@/lib/site-data";
+import Reveal from "@/components/Reveal";
 
 export default function LocationSection() {
   return (
     <section id="location" className="bg-surface-raised border-t border-surface-line">
       <div className="section py-16 md:py-20">
-        <div className="eyebrow mb-3">Visit Us</div>
-        <h2 className="text-3xl md:text-4xl italic font-medium text-ink mb-10">Our Location</h2>
+        <Reveal>
+          <div className="eyebrow mb-3">Visit Us</div>
+          <h2 className="text-3xl md:text-4xl italic font-medium text-ink mb-10">Our Location</h2>
+        </Reveal>
 
         <div className="grid md:grid-cols-[1fr_1.3fr] gap-10">
-          <div className="flex flex-col gap-8">
+          <Reveal delayMs={100} className="flex flex-col gap-8">
             <div>
               <div className="text-sm font-semibold text-ink-faint uppercase tracking-wide mb-2">
                 Address
@@ -19,7 +22,7 @@ export default function LocationSection() {
                 href={business.mapsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-red font-semibold hover:text-red-dark"
+                className="text-red font-semibold hover:text-red-dark transition-colors duration-300"
               >
                 Get Directions →
               </a>
@@ -29,7 +32,7 @@ export default function LocationSection() {
               <div className="text-sm font-semibold text-ink-faint uppercase tracking-wide mb-2">
                 Contact
               </div>
-              <a href={business.phoneHref} className="block text-ink text-lg hover:text-red">
+              <a href={business.phoneHref} className="block text-ink text-lg hover:text-red transition-colors duration-300">
                 {business.phone}
               </a>
             </div>
@@ -57,12 +60,12 @@ export default function LocationSection() {
               </ul>
             </div>
 
-            <a href={business.orderUrl} target="_blank" rel="noopener noreferrer" className="btn btn-primary self-start">
+            <a href={business.orderUrl} target="_blank" rel="noopener noreferrer" className="btn btn-primary self-start transition-colors duration-300">
               Order Online
             </a>
-          </div>
+          </Reveal>
 
-          <div className="overflow-hidden border border-surface-line min-h-[360px]">
+          <Reveal delayMs={200} className="overflow-hidden border border-surface-line min-h-[360px]">
             <iframe
               src={business.mapEmbedSrc}
               className="w-full h-full min-h-[360px]"
@@ -71,7 +74,7 @@ export default function LocationSection() {
               referrerPolicy="no-referrer-when-downgrade"
               title="Chobap Sushi & Izakaya location"
             />
-          </div>
+          </Reveal>
         </div>
       </div>
     </section>

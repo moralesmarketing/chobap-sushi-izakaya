@@ -1,22 +1,23 @@
 import Image from "next/image";
 import { fanFavorites } from "@/lib/site-data";
+import Reveal from "@/components/Reveal";
 
 export default function FanFavorites() {
   return (
     <section className="bg-surface-raised border-y border-surface-line">
       <div className="section py-16 md:py-20">
         <div className="grid md:grid-cols-[1fr_1.4fr] gap-10 md:gap-16 items-start">
-          <div className="relative aspect-[4/5] overflow-hidden hidden md:block">
+          <Reveal className="relative aspect-[4/5] overflow-hidden hidden md:block group">
             <Image
               src="/images/table-spread-stock.jpg"
               alt="Shared table spread of Japanese small plates"
               fill
               sizes="33vw"
-              className="object-cover"
+              className="object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-105"
             />
-          </div>
+          </Reveal>
 
-          <div>
+          <Reveal delayMs={150}>
             <div className="eyebrow mb-3">Most Ordered, Most Photographed</div>
             <h2 className="text-3xl md:text-4xl italic font-medium text-ink mb-8">Fan Favorites</h2>
 
@@ -38,7 +39,7 @@ export default function FanFavorites() {
                 </li>
               ))}
             </ul>
-          </div>
+          </Reveal>
         </div>
       </div>
     </section>

@@ -29,10 +29,10 @@ export default function QuickActions() {
             href={item.href}
             target={item.external ? "_blank" : undefined}
             rel={item.external ? "noopener noreferrer" : undefined}
-            className="group flex flex-col items-center text-center gap-1 py-8 px-4 hover:bg-surface-raised/50 transition-colors"
+            className="group flex flex-col items-center text-center gap-1 py-8 px-4 hover:bg-surface-raised/50 transition-colors duration-300"
           >
             <span className="eyebrow">{item.label}</span>
-            <span className="text-ink-soft text-sm group-hover:text-ink transition-colors">
+            <span className="text-ink-soft text-sm group-hover:text-ink transition-colors duration-300">
               {item.detail}
             </span>
           </a>
